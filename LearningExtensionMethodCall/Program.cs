@@ -54,31 +54,30 @@ namespace LearningExtensionMethodCall
 
         private void CallAbbreviation(string input)
         {
-            string abbr = input.Abbreviation();
-            Console.WriteLine(abbr);
+           // string abbr = input.Abbreviation();
+            Console.WriteLine("Abbreviation of" + '\t' + input + '\t' + "is" +'\t' + input.Abbreviation());
             Console.ReadLine();
         }
 
         private void CallPalindrome(string input)
         {
-            string result = input.Palindrome();
+            //string result = input.Palindrome();
 
-            Console.WriteLine(result);
+            Console.WriteLine(input.Palindrome());
 
             Console.ReadLine();
         }
 
         private void isStringPalindrome(string input)
         {
-            bool b = input.isStringPalindrome();
-            if ( b == true)
+            if (input.isStringPalindrome() == true)
             {
-                Console.WriteLine("Palindrome");
+                Console.WriteLine(input + '\t'+"is a Palindrome");
                 Console.ReadLine();
             }
             else
             {
-                Console.WriteLine("Not a palindrome");
+                Console.WriteLine(input + '\t' + "is not a Palindrome");
                 Console.ReadLine();
             }
         }
