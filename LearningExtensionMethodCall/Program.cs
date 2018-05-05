@@ -70,8 +70,8 @@ namespace LearningExtensionMethodCall
 
         private void isStringPalindrome(string input)
         {
-            bool b = false;
-            if (b == true)
+            bool b = input.isStringPalindrome();
+            if ( b == true)
             {
                 Console.WriteLine("Palindrome");
                 Console.ReadLine();
