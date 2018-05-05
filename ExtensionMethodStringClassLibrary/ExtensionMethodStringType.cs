@@ -48,5 +48,11 @@ namespace ExtClassString
             //return String.Compare(input, reversed, true) == 0;
         }
 
+        public static string ReverseString(this string input)
+        {
+            return new string(input.ToCharArray().Reverse().ToArray());
+
+        }
+
     }
 }
