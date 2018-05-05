@@ -23,21 +23,29 @@ namespace ExtClassString
             return sb.ToString();
         }
 
-        public static string Palindrome(this string input)
+        public static bool CheckPalindrome(this string input , out string reverseValue)
         {
-            char[] s = input.ToCharArray();
-             s.Reverse();
-            string p = s.ToString();
-            if (input.Equals(p))
-                return "palindrome";
+            string rev=string.Empty;
+            char[] p = input.ToCharArray();
+            string rev1 = new string(input.Reverse().ToArray());
+            for (int i = input.Length-1; i>= 0; i--)
+            {
+                rev = rev + p[i];
+            }
+            reverseValue = rev1;
+            if (rev.Equals(input))
+                return true;
             else
-                return "not palindrome";
+                return false;
+            
         }
 
         public static bool isStringPalindrome(this string input)
         {
-            var reversed = new string(Enumerable.Range(1, input.Length).Select(i => input[input.Length - i]).ToArray());
-            return String.Compare(input, reversed, true) == 0;
+            //var reversed = new string(Enumerable.Range(1, input.Length).Select(i => input[input.Length - i]).ToArray());
+            var reversed1 = new string(input.ToCharArray().Reverse().ToArray());
+            return String.Compare(input, reversed1, true) == 0;
+            //return String.Compare(input, reversed, true) == 0;
         }
 
     }

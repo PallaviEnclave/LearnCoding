@@ -17,8 +17,9 @@ namespace LearningExtensionMethodCall
             bool repeatQues;
             do
             {
-                Console.WriteLine("Ënter the choice" + '\n' + "1.Abbreviation" + '\n' + "2.Palindrome" +
-                    "\n" + "3.Exit");
+                Console.WriteLine("Ënter the choice" + '\n' + "1.Abbreviation" + '\n' + 
+                    "2.Palindrome check by LinQ" + "\n" + "3.Palindrome check by string reverse compare" +
+                    "\n" + "4.Exit");
 
                 UserChoice = Console.ReadLine();
                 switch (UserChoice)
@@ -31,13 +32,20 @@ namespace LearningExtensionMethodCall
 
                         break;
                     case "2":
-                        Console.WriteLine("Enter the Value to check for palindrome");
-                        string value1 = Console.ReadLine();
-                        obj.isStringPalindrome(value1);
+                        Console.WriteLine("Enter the Value to check for palindrome by LinQ method");
+                        string strvalue = Console.ReadLine();
+                        obj.isStringPalindrome(strvalue);
                         repeatQues = true;
 
                         break;
                     case "3":
+                        Console.WriteLine("Enter the Value to check for palindrome by string reverse comparison method");
+                        string value1 = Console.ReadLine();
+                        obj.CheckPalindrome(value1);
+                        repeatQues = true;
+
+                        break;
+                    case "4":
 
                         repeatQues = false;
                         break;
@@ -59,12 +67,12 @@ namespace LearningExtensionMethodCall
             Console.ReadLine();
         }
 
-        private void CallPalindrome(string input)
+        private void CheckPalindrome(string input)
         {
             //string result = input.Palindrome();
 
-            Console.WriteLine(input.Palindrome());
-
+            Console.WriteLine(input.CheckPalindrome(out string revstring));
+            Console.WriteLine(revstring);
             Console.ReadLine();
         }
 
