@@ -28,11 +28,14 @@ namespace ExtClassString
             string rev=string.Empty;
             char[] p = input.ToCharArray();
             string rev1 = new string(input.Reverse().ToArray());
+            string rev2 = ReverseString(input);
             for (int i = input.Length-1; i>= 0; i--)
             {
                 rev = rev + p[i];
             }
-            reverseValue = rev1;
+            //reverseValue = rev;
+            //reverseValue = rev1;
+            reverseValue = rev2;
             if (rev.Equals(input))
                 return true;
             else
